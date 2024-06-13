@@ -3,6 +3,7 @@ import Tell from "../../reuseable_component/hometells";
 import Header from "../../reuseable_component/homepageheader";
 import Navigation from "../../reuseable_component/navigation";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import Recommendation from '@/reuseable_component/recommendation';
 
 const HomePage = () => {
   return (
@@ -34,6 +35,9 @@ const HomePage = () => {
             avatarUrl="/path/to/avatar.jpg"
             replies="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
+
+          <Recommendation/>
+          
           <Tell
             message="message"
             username="khem"

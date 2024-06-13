@@ -5,8 +5,8 @@ import { Input } from "@/components/ui/input";
 
 const ProfileCard = () => {
   return (
-    <div className="max-w-md mx-auto">
-      <Card>
+    
+      <main>
         <CardHeader className="flex items-center space-x-4">
           <Avatar>
             <AvatarImage src="path_to_your_image.jpg" />
@@ -39,8 +39,8 @@ const ProfileCard = () => {
         <CardFooter className="flex justify-center">
           <Input placeholder="Send anonymous Tell..." className="w-full max-w-xs" />
         </CardFooter>
-      </Card>
-    </div>
+      </main>
+    
   );
 };
 

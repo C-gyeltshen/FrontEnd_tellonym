@@ -1,15 +1,12 @@
 import React from 'react';
 import ProfileCard from '../../reuseable_component/Profile';
 
-
-const Profile = () => {
+const App = () => {
   return (
-    <div>
+    <div className="p-4">
       <ProfileCard />
-
-      {/* Other content of your profile page */}
     </div>
   );
 };
 
-export default Profile;
+export default App;

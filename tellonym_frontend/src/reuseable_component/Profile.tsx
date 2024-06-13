@@ -2,11 +2,15 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import Tell from "../reuseable_component/hometells"
+import Navigation from "../reuseable_component/navigation";
 
 const ProfileCard = () => {
   return (
     
       <main>
+         <ScrollArea className="flex-grow w-full">
         <CardHeader className="flex items-center space-x-4">
           <Avatar>
             <AvatarImage src="path_to_your_image.jpg" />
@@ -39,8 +43,16 @@ const ProfileCard = () => {
         <CardFooter className="flex justify-center">
           <Input placeholder="Send anonymous Tell..." className="w-full max-w-xs" />
         </CardFooter>
+        <Tell/>
+        
+        </ScrollArea>
+
+        <h1>hello </h1>
+
+        <Navigation />
+
       </main>
-    
+  
   );
 };
 

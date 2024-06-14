@@ -1,50 +1,45 @@
-import React, { useEffect, useState } from 'react';
-import './index.css';
+// Profile.tsx
 
-interface Tell {
-    id: number;
-    text: string;
-}
+import React from 'react';
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+  } from "@/components/ui/card"
 
-const Inbox: React.FC = () => {
-    const [tells, setTells] = useState<Tell[]>([]);
-    const [loading, setLoading] = useState<boolean>(true);
+import PrivateHeader from "../../reuseable_component/privateMessageHeader";
+import Navigation from "../../reuseable_component/navigation";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import Privatetells from '../../reuseable_component/privatemessage';
 
-    useEffect(() => {
-        // Simulate fetching data from an API
-        const fetchTells = async () => {
-            setLoading(true);
-            // Replace this with actual API call
-            const response = await new Promise<Tell[]>(resolve =>
-                setTimeout(() => resolve([
-                    { id: 1, text: 'This is the first tell' },
-                    { id: 2, text: 'This is the second tell' },
-                    { id: 3, text: 'This is the third tell' }
-                ]), 1000)
-            );
-            setTells(response);
-            setLoading(false);
-        };
+const Profile = () => {
+  return (
 
-        fetchTells();
-    }, []);
+    <div className="flex justify-center items-start h-screen bg-gray-100">
+    <main className="flex flex-col items-center justify-start h-full max-w-md w-full p-4 border border-gray-300 bg-white shadow-md rounded-lg">
 
-    return (
-        <div className="inbox-container">
-            <div className="header">Unanswered Tells</div>
-            {loading ? (
-                <div className="loading">Loading...</div>
-            ) : tells.length === 0 ? (
-                <div className="no-tells">No unanswered tells</div>
-            ) : (
-                tells.map(tell => (
-                    <div key={tell.id} className="tell">
-                        <p className="tell-text">{tell.text}</p>
-                    </div>
-                ))
-            )}
-        </div>
-    );
-};
+    <PrivateHeader/>
+    <ScrollArea className="flex-grow w-full">
 
-export default Inbox;
+      <Privatetells/>
+      <Privatetells/>
+      <Privatetells/>
+      <Privatetells/>
+      <Privatetells/>
+      <Privatetells/>
+      <Privatetells/>
+      <Privatetells/>
+
+      
+    </ScrollArea>
+    <Navigation />
+
+    </main>
+    </div>
+        
+)};
+  
+export default Profile;

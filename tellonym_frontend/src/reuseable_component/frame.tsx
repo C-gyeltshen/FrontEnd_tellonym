@@ -1,8 +1,5 @@
 import React from 'react';
-import { GoHome } from "react-icons/go";
-import { LuInbox } from "react-icons/lu";
-import { BsChatLeftText } from "react-icons/bs";
-import { CgProfile } from "react-icons/cg";
+
 import Header from '../reuseable_component/homepageheader';
 const Frame = () => {
     return (

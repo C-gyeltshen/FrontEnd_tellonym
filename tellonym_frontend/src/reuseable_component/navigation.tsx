@@ -7,7 +7,7 @@ import { CgProfile } from "react-icons/cg";
 const Navigation = () => {
     return (
       <div className="flex space-x-16 items-stretch"> {/* Added space-x-4 for spacing between icons */}
-      <GoHome className="text-xl cursor-pointer" />
+      <GoHome className="text-xl cursor-pointer item" />
       <LuInbox className="text-xl cursor-pointer" />
       <BsChatLeftText className="text-xl cursor-pointer" />
       <CgProfile className="text-xl cursor-pointer" />

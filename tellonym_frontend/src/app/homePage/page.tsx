@@ -28,13 +28,6 @@ const HomePage = () => {
             avatarUrl="/path/to/avatar.jpg"
             replies="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
-          {/* <Tell
-            message="message"
-            username="khem"
-            timeAgo="2 hours ago"
-            avatarUrl="/path/to/avatar.jpg"
-            replies="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-          /> */}
 
           <Recommendation/>
           

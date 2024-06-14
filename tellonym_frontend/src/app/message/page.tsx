@@ -37,6 +37,8 @@ const Chat = () => {
   };
 
   return (
+    <div className="flex justify-center items-start h-screen bg-gray-100">
+    <main className="flex flex-col items-center justify-between h-full max-w-md w-full p-4 border">
     <div className="flex flex-col h-screen p-4 bg-gray-100">
       <div className="flex-1 overflow-y-auto mb-4">
         {messages.map((msg, index) => (
@@ -61,6 +63,8 @@ const Chat = () => {
         </Button>
         <Checkbox className="self-center ml-2" onChange={(checked) => setUsername(checked ? 'Anonymous' : 'User')} />
       </div>
+    </div>
+    </main>
     </div>
   );
 };

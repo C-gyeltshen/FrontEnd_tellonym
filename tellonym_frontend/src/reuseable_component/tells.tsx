@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { ScrollArea } from "../components/ui/scroll-area"; // Import the custom ScrollArea
 
-const Tells = ({ message, replies }) => {
+const Tells = () => {
   return (
     <div className="p-4 mt-4 border-t rounded-lg shadow-sm">
       <div className="flex items-center space-x-3 mb-2">
@@ -24,11 +24,11 @@ const Tells = ({ message, replies }) => {
           </div>
         </div>
       </div>
-      <p className="mb-4">{message}</p>
+      <p className="mb-4">message</p>
       <ScrollArea className="space-y-2 max-h-48"> {/* Adjust height as needed */}
-        {replies.map((reply, index) => (
+        {/* {replies.map((reply, index) => (
           <p key={index} className="border-t pt-2 text-gray-700">{reply}</p>
-        ))}
+        ))} */}
       </ScrollArea>
       <div className="flex items-center space-x-4 justify-between mt-4">
         <div className="flex space-x-2 items-center">

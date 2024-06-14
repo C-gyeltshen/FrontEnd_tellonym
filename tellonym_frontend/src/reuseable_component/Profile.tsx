@@ -65,7 +65,7 @@ const ProfileCard = () => {
             </div>
           </CardContent>
           <CardFooter>
-            {/* Add additional content or components here */}
+            
           </CardFooter>
           </ScrollArea>
         </div>

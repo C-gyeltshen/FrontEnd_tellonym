@@ -7,7 +7,13 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { ScrollArea } from "../components/ui/scroll-area"; // Import the custom ScrollArea
 
-const Tells = () => {
+// Define the type for the props
+type TellsProps = {
+  message: string;
+  replies?: string[]; // Make replies optional
+};
+
+const Tells: React.FC<TellsProps> = ({ message, replies = [] }) => { // Default to an empty array if replies is undefined
   return (
     <div className="p-4 mt-4 border-t rounded-lg shadow-sm">
       <div className="flex items-center space-x-3 mb-2">
@@ -24,11 +30,11 @@ const Tells = () => {
           </div>
         </div>
       </div>
-      <p className="mb-4">message</p>
+      <p className="mb-4">{message}</p>
       <ScrollArea className="space-y-2 max-h-48"> {/* Adjust height as needed */}
-        {/* {replies.map((reply, index) => (
+        {replies.map((reply, index) => (
           <p key={index} className="border-t pt-2 text-gray-700">{reply}</p>
-        ))} */}
+        ))}
       </ScrollArea>
       <div className="flex items-center space-x-4 justify-between mt-4">
         <div className="flex space-x-2 items-center">

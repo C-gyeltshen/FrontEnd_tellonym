@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from "../../reuseable_component/unfollows";
+import Header from "../../reuseable_component/header_unfollow";
 import Navigation from "../../reuseable_component/navigation";
 import Unfollows from '../../reuseable_component/unfollow'; 
 import { ScrollArea } from "@/components/ui/scroll-area";

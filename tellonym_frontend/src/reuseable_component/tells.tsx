@@ -1,19 +1,18 @@
-import React from 'react';
+import React from "react";
 import { BiLike } from "react-icons/bi";
-import { FaRegLaughSquint } from "react-icons/fa";
-import { FaRegSadCry } from "react-icons/fa";
+import { FaRegLaughSquint, FaRegSadCry } from "react-icons/fa";
 import { TbMessageCircle } from "react-icons/tb";
 import { IoShareOutline } from "react-icons/io5";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { ScrollArea } from "../components/ui/scroll-area"; // Import the custom ScrollArea
 
 const Tells = ({ message, replies }) => {
   return (
     <div className="p-4 mt-4 border-t rounded-lg shadow-sm">
       <div className="flex items-center space-x-3 mb-2">
         <Avatar>
-          <AvatarImage src="/mnt/data/photo_6291701904513810371_y.jpg" />
+          <AvatarImage src="/mnt/data/photo_6293953704327495970_y.jpg" /> {/* Update the image src */}
         </Avatar>
         <div className="flex-1">
           <div className="flex justify-between items-center">

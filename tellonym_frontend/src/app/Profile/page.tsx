@@ -10,7 +10,7 @@ const App = () => {
         <Header />
         <ProfileCard />
         {/* Navigation fixed at the bottom center */}
-        <div className="absolute bottom-4 left-0 right-0 flex justify-center">
+        <div className="w-full flex justify-center p-4">
           <Navigation />
         </div>
       </main>

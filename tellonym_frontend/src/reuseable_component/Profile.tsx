@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Tells from "../reuseable_component/tells";
 import { ScrollArea } from "../components/ui/scroll-area";
+import { VscSend } from "react-icons/vsc";
 
 const ProfileCard = () => {
   // Example messages and replies
@@ -31,7 +32,7 @@ const ProfileCard = () => {
     <ScrollArea className="w-full flex flex-col h-screen">
       <CardHeader className="flex items-center space-x-4 p-4">
         <Avatar>
-          <AvatarImage src="src/app/image/photo_6293953704327495957_y.jpg" />
+          <AvatarImage src="/images/photo_6293953704327495957_y.jpg" />
         </Avatar>
         <div>
           <CardTitle className="text-lg font-bold">UserName</CardTitle>
@@ -58,7 +59,12 @@ const ProfileCard = () => {
           <Button variant="outline" className="mx-2">Message</Button>
         </div>
         <div className="flex justify-center mb-4">
-          <Input placeholder="Send anonymous Tell..." className="w-full max-w-xs" />
+          <div className="relative w-full max-w-xs">
+            <Input placeholder="Send anonymous Tell..." className="w-full pr-10" />
+            <button className="absolute inset-y-0 right-0 flex items-center pr-3">
+              <VscSend className="text-black" />
+            </button>
+          </div>
         </div>
         <div className="mt-4">
           {tellsData.map((tell, index) => (

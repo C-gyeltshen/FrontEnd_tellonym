@@ -8,26 +8,11 @@ import {
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { VscSend } from "react-icons/vsc";
 import Tells from "../reuseable_component/tells";
 import { ScrollArea } from "../components/ui/scroll-area";
-import { VscSend } from "react-icons/vsc";
 
 const ProfileCard = () => {
-  // Example messages and replies
-  const tellsData = [
-    {
-      message: "Do you think you can fix a broken person?",
-      replies: ["I don't know But I can try at least"],
-    },
-    { message: "What's your type??", replies: ["Meaning Like what type type ?"] },
-    {
-      message: "How do you handle stress?",
-      replies: ["I usually take a walk or listen to music."],
-    },
-    { message: "Favorite hobby?", replies: ["I love painting and reading books."] },
-    { message: "Best advice you've received?", replies: ["Always stay true to yourself."] },
-  ];
-
   return (
     <ScrollArea className="w-full flex flex-col h-screen">
       <CardHeader className="flex items-center space-x-4 p-4">
@@ -67,9 +52,8 @@ const ProfileCard = () => {
           </div>
         </div>
         <div className="mt-4">
-          {tellsData.map((tell, index) => (
-            <Tells key={index} message={tell.message} replies={tell.replies} />
-          ))}
+          {/* Renders TellsList instead of individual Tells */}
+          <Tells />
         </div>
       </CardContent>
     </ScrollArea>

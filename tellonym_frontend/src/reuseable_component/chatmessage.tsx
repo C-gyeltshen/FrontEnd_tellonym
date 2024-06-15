@@ -42,8 +42,6 @@ const ChatMessage = () => {
           </div>
         </div>
         
-        {/* Input component */}
-        <Input />
         
       </CardContent>
     </ScrollArea>

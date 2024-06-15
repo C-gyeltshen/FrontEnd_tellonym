@@ -7,10 +7,12 @@ import {
 } from "@/components/ui/card";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { VscSend } from "react-icons/vsc";
+import TellsList from "../reuseable_component/tells"; // Assuming TellsList renders multiple Tells components
+import { ScrollArea } from "../components/ui/scroll-area";
 
-const OwnProfileCard = () => {
-  console.log("OwnProfileCard rendered");
+const ProfileCard = () => {
   return (
     <div className="w-full flex flex-col">
       <CardHeader className="flex items-center space-x-4 p-4">
@@ -47,10 +49,15 @@ const OwnProfileCard = () => {
               Message
             </Button>
           </div>
+          <div className="mt-4">
+            <ScrollArea className="max-h-96 overflow-y-auto">
+              <TellsList />
+            </ScrollArea>
+          </div>
         </div>
       </CardContent>
     </div>
   );
 };
 
-export default OwnProfileCard;
+export default ProfileCard;

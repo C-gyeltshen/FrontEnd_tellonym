@@ -1,16 +1,11 @@
 import React from "react";
+import { Avatar, AvatarImage } from "../components/ui/avatar"; // Assuming you're using shadcn UI library for avatar
+import { ScrollArea } from "../components/ui/scroll-area";
 import { BiLike } from "react-icons/bi";
 import { FaRegLaughSquint, FaRegSadCry } from "react-icons/fa";
 import { TbMessageCircle } from "react-icons/tb";
 import { IoShareOutline } from "react-icons/io5";
-import { Button } from "@/components/ui/button";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { ScrollArea } from "../components/ui/scroll-area";
-
-type TellsProps = {
-  message: string;
-  replies?: string[];
-};
+import { Button } from "../components/ui/button"; // Assuming you're using shadcn UI library for buttons
 
 const tellsData = [
   {
@@ -26,23 +21,28 @@ const tellsData = [
   { message: "Best advice you've received?", replies: ["Always stay true to yourself."] },
 ];
 
+interface TellsProps {
+  message: string;
+  replies?: string[];
+}
+
 const Tells: React.FC<TellsProps> = ({ message, replies = [] }) => {
   return (
-    <div className="p-4 mt-4 border-t rounded-lg shadow-sm">
+    <div className="p-4 mt-4 border-t rounded-lg shadow-sm bg-white">
       <div className="flex items-center space-x-3 mb-2">
         <Avatar>
-          <AvatarImage src="/mnt/data/photo_6293953704327495970_y.jpg" />
+          <AvatarImage src="/mnt/data/photo_6300669250767011144_y.jpg" className="rounded-full w-12 h-12" />
         </Avatar>
         <div className="flex-1">
           <div className="flex justify-between items-center">
             <div>
-              <div className="font-bold">namgyel.8261461</div>
+              <div className="font-bold text-base">namgyel.8261461</div>
               <div className="text-sm text-gray-500">2 days ago</div>
             </div>
           </div>
         </div>
       </div>
-      <p className="mb-4">{message}</p>
+      <p className="mb-4 text-gray-800">{message}</p>
       <ScrollArea className="space-y-2 max-h-48">
         {replies.map((reply, index) => (
           <p key={index} className="border-t pt-2 text-gray-700">{reply}</p>
@@ -50,14 +50,14 @@ const Tells: React.FC<TellsProps> = ({ message, replies = [] }) => {
       </ScrollArea>
       <div className="flex items-center space-x-4 justify-between mt-4">
         <div className="flex space-x-2 items-center">
-          <BiLike className="text-xl cursor-pointer" />
-          <FaRegLaughSquint className="text-xl cursor-pointer" />
-          <FaRegSadCry className="text-xl cursor-pointer" />
+          <BiLike className="text-xl cursor-pointer text-gray-600 hover:text-gray-800" />
+          <FaRegLaughSquint className="text-xl cursor-pointer text-gray-600 hover:text-gray-800" />
+          <FaRegSadCry className="text-xl cursor-pointer text-gray-600 hover:text-gray-800" />
         </div>
         <div className="flex space-x-2 items-center ml-auto">
-          <TbMessageCircle className="text-xl cursor-pointer" />
-          <IoShareOutline className="text-xl cursor-pointer" />
-          <Button className="self-center cursor-pointer">Send Tells</Button>
+          <TbMessageCircle className="text-xl cursor-pointer text-gray-600 hover:text-gray-800" />
+          <IoShareOutline className="text-xl cursor-pointer text-gray-600 hover:text-gray-800" />
+          <Button className="self-center cursor-pointer bg-pink-500 text-white rounded-full px-4 py-1">Send Tell</Button>
         </div>
       </div>
     </div>
@@ -66,7 +66,7 @@ const Tells: React.FC<TellsProps> = ({ message, replies = [] }) => {
 
 const TellsList: React.FC = () => {
   return (
-    <div>
+    <div className="space-y-4">
       {tellsData.map((tell, index) => (
         <Tells key={index} message={tell.message} replies={tell.replies} />
       ))}

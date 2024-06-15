@@ -3,7 +3,8 @@ import React from 'react';
 import { ScrollArea } from "@/components/ui/scroll-area";
 import MessageHeader from '@/reuseable_component/messageHeader';
 import ChatMessage from '@/reuseable_component/chatmessage';
-import { Button } from "@/components/ui/button";
+import { IoSendSharp } from "react-icons/io5";
+
 
 const HomePage = () => {
   return (
@@ -21,7 +22,7 @@ const HomePage = () => {
             className="flex-grow p-2 border border-gray-300 rounded"
             placeholder="Type your message..."
           />
-          <Button variant="outline">Send</Button>
+          <IoSendSharp size={24}/>
         </div>
       </main>
     </div>

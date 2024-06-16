@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import {
   CardContent,
   CardHeader,
@@ -7,7 +8,6 @@ import {
 } from "@/components/ui/card";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { VscSend } from "react-icons/vsc";
 import Tells from "../reuseable_component/tells";
 import { ScrollArea } from "../components/ui/scroll-area";
@@ -29,7 +29,9 @@ const ChatMessage = () => {
           <div className="flex justify-around mb-4">
             <div className="text-center">
               <div className="text-lg font-bold">9</div>
-              <div className="text-sm text-gray-500">Followers</div>
+              <Link href="/followers">
+                <span className="cursor-pointer text-sm text-gray-500">Followers</span>
+              </Link>
             </div>
             <div className="text-center">
               <div className="text-lg font-bold">1,194</div>
@@ -37,12 +39,13 @@ const ChatMessage = () => {
             </div>
             <div className="text-center">
               <div className="text-lg font-bold">10</div>
-              <div className="text-sm text-gray-500">Followings</div>
+              <Link href="/following">
+                <span className="cursor-pointer text-sm text-gray-500">Followings</span>
+              </Link>
             </div>
           </div>
         </div>
-        
-        
+
       </CardContent>
     </ScrollArea>
   );

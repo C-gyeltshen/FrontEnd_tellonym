@@ -43,7 +43,7 @@ const ProfileCard = () => {
           <div className="flex justify-between space-x-4 mb-4">
             <Button variant="outline" className="flex-1 flex items-center justify-center">
               Send Tells
-              <VscSend className="ml-2" />
+              <VscSend className="text-pink-500"/>
             </Button>
             <Button variant="outline" className="flex-1">
               Message

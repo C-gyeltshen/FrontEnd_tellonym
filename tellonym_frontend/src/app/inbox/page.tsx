@@ -1,5 +1,5 @@
 import React from 'react';
-import { MdInbox } from 'react-icons/md'; // Importing the inbox icon from react-icons
+import InboxHeader from '../../reuseable_component/InboxHeader';
 import Navigation from '../../reuseable_component/navigation';
 import { Button } from '../../components/ui/button';
 import { ScrollArea } from '../../components/ui/scroll-area';
@@ -27,22 +27,16 @@ const Tells: React.FC<{ message: string; timestamp: string }> = ({ message, time
   );
 };
 
-const MainLayout = () => {
+const MainLayout: React.FC = () => {
   return (
     <div className="flex justify-center items-start h-screen bg-gray-100">
       <main className="flex flex-col items-center justify-start h-full max-w-md w-full p-4 border border-gray-300 bg-white shadow-md rounded-lg overflow-auto relative">
-        <div className="w-full flex justify-between items-center border-b border-gray-300 py-2 px-4 relative">
-          <h1 className="m-0 absolute left-1/2 transform -translate-x-1/2">tellonym</h1>
-          <div className="flex items-center space-x-10 absolute right-0 pr-4">
-            <MdInbox className="text-xl cursor-pointer" />
-          </div>
-        </div>
+        <InboxHeader /> {/* Using the InboxHeader component */}
         <ScrollArea className="flex-1 w-full overflow-y-auto">
           {tellsData.map((tell, index) => (
             <Tells key={index} message={tell.message} timestamp={tell.timestamp} />
           ))}
         </ScrollArea>
-
         {/* Navigation fixed at the bottom center */}
         <div className="w-full flex justify-center p-4">
           <Navigation />

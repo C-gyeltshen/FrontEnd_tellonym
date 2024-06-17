@@ -1,5 +1,5 @@
 import React from "react";
-import TellonymPage from "./ReplyPage";
+import TellonymPage from "../../reuseable_component/ReplyPage";
 
 const TellsReply: React.FC = () => {
   return (

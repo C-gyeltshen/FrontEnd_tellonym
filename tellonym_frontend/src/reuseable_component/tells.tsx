@@ -42,7 +42,7 @@ const Tells: React.FC<TellsProps> = ({ message, replies = [] }) => {
         <div className="flex-1">
           <div className="flex justify-between items-center">
             <div>
-              <div className="font-bold text-base">namgyel.8261461</div>
+              <div className="font-bold text-base cursor-pointer" onClick={() => router.push("/publicProfile")}>namgyel.8261461</div>
               <div className="text-sm text-gray-500">2 days ago</div>
             </div>
           </div>

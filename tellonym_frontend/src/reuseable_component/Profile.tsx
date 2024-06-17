@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import {
   CardContent,
   CardHeader,
@@ -7,14 +8,12 @@ import {
 } from "@/components/ui/card";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { VscSend } from "react-icons/vsc";
 import Tells from "../reuseable_component/tells";
 import { ScrollArea } from "../components/ui/scroll-area";
-import { useRouter } from 'next/navigation';
 
 const ProfileCard = () => {
-  const router = useRouter();
-
   return (
     <ScrollArea className="w-full flex flex-col h-screen">
       <CardHeader className="flex items-center space-x-4 p-4">
@@ -31,33 +30,35 @@ const ProfileCard = () => {
           <div className="flex justify-around mb-4">
             <div className="text-center">
               <div className="text-lg font-bold">9</div>
-              <div className="text-sm text-gray-500">Followers</div>
-            </div>
+              <Link href="/followers">
+                <span className="cursor-pointer text-sm text-gray-500">Followers</span>
+              </Link>
             <div className="text-center">
               <div className="text-lg font-bold">1,194</div>
               <div className="text-sm text-gray-500">Tells</div>
             </div>
             <div className="text-center">
               <div className="text-lg font-bold">10</div>
-              <div className="text-sm text-gray-500">Followings</div>
-            </div>
+              <Link href="/following">
+                <span className="cursor-pointer text-sm text-gray-500">Followings</span>
+              </Link>
           </div>
           <Button variant="outline" className="mx-2">Unfollow</Button>
           <Button variant="outline" className="mx-2">Message</Button>
         </div>
         <div className="flex justify-center mb-4">
-          <Button
-            variant="outline"
-            className="relative w-full max-w-xs"
-            onClick={() => router.push('/tellsend')}
-          >
-            <VscSend className="text-black mr-2" />
-            Send anonymous Tell
-          </Button>
+          <div className="relative w-full max-w-xs">
+            <Input placeholder="Send anonymous Tell..." className="w-full pr-10" />
+            <button className="absolute inset-y-0 right-0 flex items-center pr-3">
+              <VscSend className="text-black" />
+            </button>
+          </div>
+        </div>
         </div>
         <div className="mt-4">
           {/* Renders TellsList instead of individual Tells */}
           <Tells />
+        </div>
         </div>
       </CardContent>
     </ScrollArea>

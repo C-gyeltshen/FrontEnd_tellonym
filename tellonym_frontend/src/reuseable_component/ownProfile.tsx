@@ -33,6 +33,7 @@ const ProfileCard = () => {
         <div className="text-center mb-4">
           <div className="flex justify-around mb-4">
             <div className="text-center">
+              
 
               <div className="text-lg font-bold">9</div>
               <Link href="/followers">

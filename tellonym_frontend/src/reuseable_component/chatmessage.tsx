@@ -1,53 +1,29 @@
 import React from "react";
-import Link from "next/link";
-import {
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-import { VscSend } from "react-icons/vsc";
-import Tells from "../reuseable_component/tells";
-import { ScrollArea } from "../components/ui/scroll-area";
+import { VscCheckAll } from "react-icons/vsc"; // Seen icon
+import { Message } from "@/types/types"; // Update the import path
 
-const ChatMessage = () => {
+interface ChatMessageProps {
+  messages: Message[];
+}
+
+const ChatMessage: React.FC<ChatMessageProps> = ({ messages }) => {
   return (
-    <ScrollArea className="w-full flex flex-col h-screen">
-      <CardHeader className="flex items-center space-x-4 p-4">
-        <Avatar>
-          <AvatarImage src="/images/photo_6293953704327495957_y.jpg" />
-        </Avatar>
-        <div>
-          <CardTitle className="text-lg font-bold">UserName</CardTitle>
-          <CardDescription className="text-sm text-gray-500">@namgyel.8261461</CardDescription>
-        </div>
-      </CardHeader>
-      <CardContent className="flex-1 relative overflow-y-auto p-4">
-        <div className="text-center mb-4">
-          <div className="flex justify-around mb-4">
-            <div className="text-center">
-              <div className="text-lg font-bold">9</div>
-              <Link href="/followers">
-                <span className="cursor-pointer text-sm text-gray-500">Followers</span>
-              </Link>
-            </div>
-            <div className="text-center">
-              <div className="text-lg font-bold">1,194</div>
-              <div className="text-sm text-gray-500">Tells</div>
-            </div>
-            <div className="text-center">
-              <div className="text-lg font-bold">10</div>
-              <Link href="/following">
-                <span className="cursor-pointer text-sm text-gray-500">Followings</span>
-              </Link>
+    <div className="flex flex-col space-y-4">
+      {messages.map((message, index) => (
+        <div
+          key={index}
+          className={`flex ${message.isSender ? 'justify-end' : 'justify-start'}`}
+        >
+          <div className={`p-2 rounded-lg ${message.isSender ? 'bg-blue-100' : 'bg-gray-100'}`}>
+            <div>{message.content}</div>
+            <div className="text-xs text-gray-500 flex items-center space-x-1">
+              <span>{message.timestamp}</span>
+              {message.seen && <VscCheckAll className="text-blue-500" />}
             </div>
           </div>
         </div>
-
-      </CardContent>
-    </ScrollArea>
+      ))}
+    </div>
   );
 };
 

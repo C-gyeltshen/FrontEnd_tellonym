@@ -1,5 +1,5 @@
-import React from "react"; 
-import Link from "next/link"; 
+'use client'
+import React from "react";
 import { 
   CardContent, 
   CardHeader, 
@@ -12,11 +12,10 @@ import { VscSend } from "react-icons/vsc";
 import Tells from "../reuseable_component/tells"; 
 import { ScrollArea } from "../components/ui/scroll-area"; 
 import { useRouter } from 'next/navigation'; 
- 
- 
+
 const ProfileCard = () => { 
   const router = useRouter(); 
- 
+
   return ( 
     <ScrollArea className="w-full flex flex-col h-screen"> 
       <CardHeader className="flex items-center space-x-4 p-4"> 
@@ -33,9 +32,12 @@ const ProfileCard = () => {
           <div className="flex justify-around mb-4"> 
             <div className="text-center"> 
               <div className="text-lg font-bold">9</div> 
-              <Link href="/followers"> 
-                <span className="cursor-pointer text-sm text-gray-500">Followers</span> 
-              </Link> 
+              <span 
+                className="cursor-pointer text-sm text-gray-500"
+                onClick={() => router.push('/followers')}
+              >
+                Followers
+              </span> 
             </div> 
             <div className="text-center"> 
               <div className="text-lg font-bold">1,194</div> 
@@ -43,9 +45,12 @@ const ProfileCard = () => {
             </div> 
             <div className="text-center"> 
               <div className="text-lg font-bold">10</div> 
-              <Link href="/following"> 
-                <span className="cursor-pointer text-sm text-gray-500">Followings</span> 
-              </Link> 
+              <span 
+                className="cursor-pointer text-sm text-gray-500"
+                onClick={() => router.push('/following')}
+              >
+                Followings
+              </span> 
             </div> 
           </div> 
           <Button variant="outline" className="mx-2">Unfollow</Button> 
@@ -55,7 +60,7 @@ const ProfileCard = () => {
           <Button 
             variant="outline" 
             className="relative w-full max-w-xs" 
-            onClick={() => router.push('/tellsend')} 
+            onClick={() => router.push('/tellsend')}
           > 
             <VscSend className="text-black mr-2" /> 
             Send anonymous Tell 
@@ -69,5 +74,5 @@ const ProfileCard = () => {
     </ScrollArea> 
   ); 
 }; 
- 
+
 export default ProfileCard;

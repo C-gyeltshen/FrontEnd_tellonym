@@ -1,22 +1,24 @@
 import React from "react";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { User } from "@/types/types"; // Import the User type
-import Link from "next/link";
 import { IoArrowBack } from "react-icons/io5"; // Import back arrow icon
 import { BsThreeDotsVertical } from "react-icons/bs"; // Import dots icon
+import { useRouter } from 'next/navigation'; // Import useRouter from next/navigation
 
 interface MessageHeaderProps {
   user: User;
 }
 
 const MessageHeader: React.FC<MessageHeaderProps> = ({ user }) => {
+  const router = useRouter();
+
   return (
     <div>
       {/* Header with back button and username */}
       <div className="flex items-center justify-between p-4 border-b border-gray-300">
-        <Link href="/chats">
+        <div onClick={() => router.push('/chats')}>
           <IoArrowBack className="text-xl cursor-pointer" />
-        </Link>
+        </div>
         <div className="flex items-center space-x-2">
           <Avatar className="w-8 h-8">
             <AvatarImage src={user.image} alt="User Avatar" />
@@ -38,22 +40,18 @@ const MessageHeader: React.FC<MessageHeaderProps> = ({ user }) => {
           </div>
         </div>
         <div className="flex justify-around w-full mt-4">
-          <Link href="/followers">
-            <div className="text-center cursor-pointer">
-              <div className="text-lg font-bold">{user.followers}</div>
-              <span className="text-sm text-gray-500">Followers</span>
-            </div>
-          </Link>
+          <div className="text-center cursor-pointer" onClick={() => router.push('/followers')}>
+            <div className="text-lg font-bold">{user.followers}</div>
+            <span className="text-sm text-gray-500">Followers</span>
+          </div>
           <div className="text-center">
             <div className="text-lg font-bold">{user.tells}</div>
             <span className="text-sm text-gray-500">Tells</span>
           </div>
-          <Link href="/following">
-            <div className="text-center cursor-pointer">
-              <div className="text-lg font-bold">{user.followings}</div>
-              <span className="text-sm text-gray-500">Followings</span>
-            </div>
-          </Link>
+          <div className="text-center cursor-pointer" onClick={() => router.push('/following')}>
+            <div className="text-lg font-bold">{user.followings}</div>
+            <span className="text-sm text-gray-500">Followings</span>
+          </div>
         </div>
       </div>
     </div>

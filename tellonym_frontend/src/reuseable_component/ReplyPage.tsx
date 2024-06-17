@@ -1,11 +1,14 @@
+"use client"
 import React from 'react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { FiImage, FiCamera } from 'react-icons/fi'; // Importing icons from react-icons
 import TellsReplyHeader from '@/reuseable_component/TellsReplyHeader';
+import { useRouter } from 'next/navigation';
 import './ReplyPage.css';
 
 const TellonymPage: React.FC = () => {
+    const router = useRouter();
     return (
         <div className="max-w-md mx-auto">
             <TellsReplyHeader />
@@ -29,7 +32,7 @@ const TellonymPage: React.FC = () => {
                         <FiCamera className="text-gray-600 text-xl mr-2" /> {/* Camera Icon */}
                         <FiImage className="text-gray-600 text-xl" /> {/* Image Icon */}
                     </div>
-                    <Button>Send</Button>
+                    <Button onClick={() => router.push('/inbox')}>Send </Button>
                 </div>
             </div>
         </div>

@@ -1,11 +1,13 @@
+"use client"
 import React from "react";
-import { Avatar, AvatarImage } from "../components/ui/avatar"; // Assuming you're using shadcn UI library for avatar
+import { Avatar, AvatarImage } from "../components/ui/avatar"; 
 import { ScrollArea } from "../components/ui/scroll-area";
 import { BiLike } from "react-icons/bi";
 import { FaRegLaughSquint, FaRegSadCry } from "react-icons/fa";
 import { TbMessageCircle } from "react-icons/tb";
 import { IoShareOutline } from "react-icons/io5";
-import { Button } from "../components/ui/button"; // Assuming you're using shadcn UI library for buttons
+import { Button } from "../components/ui/button"; 
+import ToggleIcon from "../reuseable_component/toggleicon";
 
 const tellsData = [
   {
@@ -50,7 +52,8 @@ const Tells: React.FC<TellsProps> = ({ message, replies = [] }) => {
       </ScrollArea>
       <div className="flex items-center space-x-4 justify-between mt-4">
         <div className="flex space-x-2 items-center">
-          <BiLike className="text-xl cursor-pointer text-gray-600 hover:text-gray-800" />
+          {/* <BiLike className="text-xl cursor-pointer text-gray-600 hover:text-gray-800" /> */}
+          <ToggleIcon/>
           <FaRegLaughSquint className="text-xl cursor-pointer text-gray-600 hover:text-gray-800" />
           <FaRegSadCry className="text-xl cursor-pointer text-gray-600 hover:text-gray-800" />
         </div>

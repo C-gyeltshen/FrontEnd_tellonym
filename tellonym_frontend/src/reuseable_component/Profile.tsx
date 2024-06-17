@@ -33,6 +33,7 @@ const ProfileCard = () => {
               <Link href="/followers">
                 <span className="cursor-pointer text-sm text-gray-500">Followers</span>
               </Link>
+            </div>
             <div className="text-center">
               <div className="text-lg font-bold">1,194</div>
               <div className="text-sm text-gray-500">Tells</div>
@@ -42,23 +43,24 @@ const ProfileCard = () => {
               <Link href="/following">
                 <span className="cursor-pointer text-sm text-gray-500">Followings</span>
               </Link>
+            </div>
           </div>
-          <Button variant="outline" className="mx-2">Unfollow</Button>
-          <Button variant="outline" className="mx-2">Message</Button>
-        </div>
-        <div className="flex justify-center mb-4">
-          <div className="relative w-full max-w-xs">
-            <Input placeholder="Send anonymous Tell..." className="w-full pr-10" />
-            <button className="absolute inset-y-0 right-0 flex items-center pr-3">
-              <VscSend className="text-black" />
-            </button>
+          <div className="flex justify-center mb-4">
+            <Button variant="outline" className="mx-2">Unfollow</Button>
+            <Button variant="outline" className="mx-2">Message</Button>
           </div>
-        </div>
-        </div>
-        <div className="mt-4">
-          {/* Renders TellsList instead of individual Tells */}
-          <Tells />
-        </div>
+          <div className="flex justify-center mb-4">
+            <div className="relative w-full max-w-xs">
+              <Input placeholder="Send anonymous Tell..." className="w-full pr-10" />
+              <button className="absolute inset-y-0 right-0 flex items-center pr-3">
+                <VscSend className="text-black" />
+              </button>
+            </div>
+          </div>
+          <div className="mt-4">
+            {/* Renders TellsList instead of individual Tells */}
+            <Tells />
+          </div>
         </div>
       </CardContent>
     </ScrollArea>

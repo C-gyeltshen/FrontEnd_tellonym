@@ -17,16 +17,16 @@ const ChatList = () => {
         </Card>
         <div className='px-2 ml-2'>
           <div>
-            username {/* Replace with actual username */}
+            username 
           </div>
           <div>
-            message {/* Replace with actual message */}
+            message 
           </div>
         </div>
       </div>
       <div className='flex items-center'>
         <div className=''>
-          time {/* Replace with actual time */}
+          time 
         </div>
       </div>
     </div>

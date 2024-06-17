@@ -54,8 +54,8 @@ const Tells: React.FC<TellsProps> = ({ message, replies = [] }) => {
         <div className="flex space-x-2 items-center">
           {/* <BiLike className="text-xl cursor-pointer text-gray-600 hover:text-gray-800" /> */}
           <ToggleIcon/>
-          <FaRegLaughSquint className="text-xl cursor-pointer text-gray-600 hover:text-gray-800" />
-          <FaRegSadCry className="text-xl cursor-pointer text-gray-600 hover:text-gray-800" />
+          {/* <FaRegLaughSquint className="text-xl cursor-pointer text-gray-600 hover:text-gray-800" />
+          <FaRegSadCry className="text-xl cursor-pointer text-gray-600 hover:text-gray-800" /> */}
         </div>
         <div className="flex space-x-2 items-center ml-auto">
           <TbMessageCircle className="text-xl cursor-pointer text-gray-600 hover:text-gray-800" />

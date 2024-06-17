@@ -7,12 +7,14 @@ import {
 } from "@/components/ui/card";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { VscSend } from "react-icons/vsc";
 import Tells from "../reuseable_component/tells";
 import { ScrollArea } from "../components/ui/scroll-area";
+import { useRouter } from 'next/navigation';
 
 const ProfileCard = () => {
+  const router = useRouter();
+
   return (
     <ScrollArea className="w-full flex flex-col h-screen">
       <CardHeader className="flex items-center space-x-4 p-4">
@@ -44,12 +46,14 @@ const ProfileCard = () => {
           <Button variant="outline" className="mx-2">Message</Button>
         </div>
         <div className="flex justify-center mb-4">
-          <div className="relative w-full max-w-xs">
-            <Input placeholder="Send anonymous Tell..." className="w-full pr-10" />
-            <button className="absolute inset-y-0 right-0 flex items-center pr-3">
-              <VscSend className="text-black" />
-            </button>
-          </div>
+          <Button
+            variant="outline"
+            className="relative w-full max-w-xs"
+            onClick={() => router.push('/tellsend')}
+          >
+            <VscSend className="text-black mr-2" />
+            Send anonymous Tell
+          </Button>
         </div>
         <div className="mt-4">
           {/* Renders TellsList instead of individual Tells */}

@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import ProfileCard from '../../reuseable_component/Profile';
 import Header from '../../reuseable_component/homepageheader';

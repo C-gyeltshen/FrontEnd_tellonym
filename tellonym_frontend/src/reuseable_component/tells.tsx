@@ -8,6 +8,8 @@ import { TbMessageCircle } from "react-icons/tb";
 import { IoShareOutline } from "react-icons/io5";
 import { Button } from "../components/ui/button"; 
 import ToggleIcon from "../reuseable_component/toggleicon";
+import Link from "next/link";
+import { useRouter } from 'next/navigation';
 
 const tellsData = [
   {
@@ -29,6 +31,8 @@ interface TellsProps {
 }
 
 const Tells: React.FC<TellsProps> = ({ message, replies = [] }) => {
+  const router = useRouter();
+  
   return (
     <div className="p-4 mt-4 border-t rounded-lg shadow-sm bg-white">
       <div className="flex items-center space-x-3 mb-2">
@@ -60,7 +64,7 @@ const Tells: React.FC<TellsProps> = ({ message, replies = [] }) => {
         <div className="flex space-x-2 items-center ml-auto">
           <TbMessageCircle className="text-xl cursor-pointer text-gray-600 hover:text-gray-800" />
           <IoShareOutline className="text-xl cursor-pointer text-gray-600 hover:text-gray-800" />
-          <Button className="self-center cursor-pointer bg-pink-500 text-white rounded-full px-4 py-1">Send Tell</Button>
+          <Button className="self-center cursor-pointer bg-pink-500 text-white rounded-full px-4 py-1"  onClick={() => router.push('/tellsend')} >Send Tell</Button>
         </div>
       </div>
     </div>

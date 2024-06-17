@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import Link from "next/link";
 import {
@@ -11,8 +12,12 @@ import { Button } from "@/components/ui/button";
 import { VscSend } from "react-icons/vsc";
 import TellsList from "../reuseable_component/tells"; // Assuming TellsList renders multiple Tells components
 import { ScrollArea } from "../components/ui/scroll-area";
+import { useRouter } from 'next/navigation';
 
 const ProfileCard = () => {
+  const router = useRouter();
+
+  
   return (
     <div className="w-full flex flex-col">
       <CardHeader className="flex items-center space-x-4 p-4">
@@ -47,9 +52,8 @@ const ProfileCard = () => {
             </div>
           </div>
           <div className="flex justify-between space-x-4 mb-4">
-            <Button variant="outline" className="flex-1 flex items-center justify-center">
+            <Button variant="outline" className="flex-1 flex items-center justify-center" onClick={() => router.push('/tellsend')}>
               Send Tells
-              <VscSend className="text-pink-500"/>
             </Button>
             <Button variant="outline" className="flex-1">
               Message

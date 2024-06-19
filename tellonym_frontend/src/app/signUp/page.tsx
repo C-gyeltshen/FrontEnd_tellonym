@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export default function LoginPage() {
     const [formData, setFormData] = useState({
-        username: '',
+        user_name: '',
         email: '',
         password: ''
     });
@@ -14,7 +14,7 @@ export default function LoginPage() {
         event.preventDefault();
         
         try {
-            const response = await fetch('http://localhost:8080/signUp', {
+            const response = await fetch('http://localhost:8080/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -9,8 +9,6 @@ const Frame = () => {
             <Header />
             
           </div>
-  
-          
         </main>
       </div>
     

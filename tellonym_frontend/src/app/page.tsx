@@ -10,6 +10,10 @@ export default function SignUp() {
         router.push('/signUp');
     };
 
+    const handleLoginClick = () => {
+        router.push('/login');
+    };
+
     return (
         <div className="flex justify-center   bg-gray-100">
             <main className="flex flex-col justify-start  max-w-md w-full p-4 border border-gray-300 bg-white shadow-md rounded-lg overflow-auto relative">              
@@ -28,7 +32,7 @@ export default function SignUp() {
                         <Button className="w-full  text-1xl text-white " onClick={handleSignUpClick}>
                             Sign Up
                         </Button>
-                        <Button className="w-full  text-white ">
+                        <Button className="w-full  text-white " onClick={handleLoginClick}>
                             Login
                         </Button>
                     </div>

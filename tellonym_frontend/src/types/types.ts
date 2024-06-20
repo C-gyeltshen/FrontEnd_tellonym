@@ -1,13 +1,24 @@
-// src/types/types.ts
 export interface Message {
-  content: string;
+  from: string;
+  to: string;
+  media: {
+    type: string;
+    content: string;
+  };
   timestamp: string;
-  seen: boolean;
-  isSender: boolean;
+  isSender: boolean; // Add this property
 }
 
-export interface MessagePayload extends Message {
-  userProfileImage: string;
+export interface MessagePayload {
+  room_id: string;
+  from: string;
+  to: string;
+  media: {
+    type: string;
+    content: string;
+  };
+  timestamp: string;
+  isSender: boolean; // Add this property
 }
 
 export interface User {

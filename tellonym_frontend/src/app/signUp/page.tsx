@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
+import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
     const [formData, setFormData] = useState({
@@ -9,6 +10,8 @@ export default function LoginPage() {
         email: '',
         password: ''
     });
+
+    const router = useRouter();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -28,6 +31,9 @@ export default function LoginPage() {
 
             // Handle successful form submission, e.g., show success message or redirect
             console.log('Form submitted successfully');
+            
+            // Redirect the user to the dashboard
+            router.push('/login');
         } catch (error) {
             console.error('Error:', error);
             // Handle error, e.g., show error message to user
@@ -48,8 +54,8 @@ export default function LoginPage() {
                 <h1 className="text-4xl font-bold font-serif text-gray-800">Sign Up</h1>
                 <div className="w-full">
                     <input
-                        name="username"
-                        value={formData.username}
+                        name="user_name"
+                        value={formData.user_name}
                         onChange={handleChange}
                         placeholder="Username"
                         className="w-full p-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"

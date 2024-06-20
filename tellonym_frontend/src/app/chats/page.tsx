@@ -6,14 +6,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 const HomePage = () => {
   const chats = [
-    { avatarSrc: "/mnt/data/photo_6300669250767011144_y.jpg", username: "yeshi_hazard_11", message: "Oie", timestamp: "6d" },
-    { avatarSrc: "/mnt/data/photo_6300669250767011144_y.jpg", username: "pema.dolker", message: "Unga bunga", timestamp: "7d" },
-    { avatarSrc: "/mnt/data/photo_6300669250767011144_y.jpg", username: "john.doe", message: "Hello there!", timestamp: "5d" },
-    { avatarSrc: "/mnt/data/photo_6300669250767011144_y.jpg", username: "jane.smith", message: "What's up?", timestamp: "4d" },
-    { avatarSrc: "/mnt/data/photo_6300669250767011144_y.jpg", username: "alice.wonder", message: "Good morning!", timestamp: "3d" },
-    { avatarSrc: "/mnt/data/photo_6300669250767011144_y.jpg", username: "bob.builder", message: "Can we fix it?", timestamp: "2d" },
-    { avatarSrc: "/mnt/data/photo_6300669250767011144_y.jpg", username: "charlie.brown", message: "Snoopy!", timestamp: "1d" },
-    // Add more chat data as needed
+    { avatarSrc: "/mnt/data/photo_6300669250767011144_y.jpg", username: "pema.dolker", message: "Unga bunga", timestamp: "7d" }
   ];
 
   return (

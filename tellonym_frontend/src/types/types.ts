@@ -1,4 +1,15 @@
+// /src/types/types.ts
+export interface User {
+  image: string;
+  name: string;
+  username: string;
+  followers: number;
+  tells: number;
+  followings: number;
+}
+
 export interface Message {
+  room_id: string;
   from: string;
   to: string;
   media: {
@@ -6,7 +17,7 @@ export interface Message {
     content: string;
   };
   timestamp: string;
-  isSender: boolean; // Add this property
+  isSender: boolean;
 }
 
 export interface MessagePayload {
@@ -18,14 +29,12 @@ export interface MessagePayload {
     content: string;
   };
   timestamp: string;
-  isSender: boolean; // Add this property
+  isSender: boolean;
 }
 
-export interface User {
-  image: string;
-  name: string;
+export interface Chat {
+  avatarSrc: string;
   username: string;
-  followers: number;
-  tells: number;
-  followings: number;
+  message: string;
+  timestamp: string;
 }

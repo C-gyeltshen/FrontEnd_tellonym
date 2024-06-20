@@ -14,7 +14,7 @@ const MessageHeader: React.FC<MessageHeaderProps> = ({ user }) => {
 
   return (
     <div>
-      {/* Header with back button and username */}
+      {/* Header with back button and username
       <div className="flex items-center justify-between p-4 border-b border-gray-300">
         <div onClick={() => router.push('/chats')}>
           <IoArrowBack className="text-xl cursor-pointer" />
@@ -26,7 +26,7 @@ const MessageHeader: React.FC<MessageHeaderProps> = ({ user }) => {
           <span className="font-bold">{user.username}</span>
         </div>
         <BsThreeDotsVertical className="text-xl cursor-pointer" />
-      </div>
+      </div> */}
 
       {/* User details */}
       <div className="flex flex-col items-center p-4 border-b border-gray-300">

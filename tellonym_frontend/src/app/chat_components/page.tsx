@@ -7,25 +7,22 @@ import { Button } from "@/components/ui/button";
 import ChatMessage from "@/reuseable_component/chatmessage";
 import MessageHeader from "@/reuseable_component/MessageHeader";
 import { VscSend } from "react-icons/vsc"; 
+import { AiOutlineArrowLeft, AiOutlineMore } from "react-icons/ai"; // Import icons
 import { Message, MessagePayload, User } from "@/types/types";
 
 const socket = io("http://localhost:3001");
 
-const user: User = {
-  image: "/mnt/data/image.png", 
-  name: "Pema Dolker",
-  username: "pema.dolker",
-  followers: 7,
-  tells: 58,
-  followings: 7,
-};
+interface ChatComponentProps {
+  data: User;
+  onBack: () => void;
+}
 
-export default function ChatComponent({ data }: { data: any }) {
+export default function ChatComponent({ data, onBack }: ChatComponentProps) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [newMessage, setNewMessage] = useState("");
 
   useEffect(() => {
-    const roomId = "Uid1_Uid2"; 
+    const roomId = `room_${data.username}`; 
     socket.emit('join room', roomId);
 
     socket.on("chat message", (message: Message) => {
@@ -35,13 +32,13 @@ export default function ChatComponent({ data }: { data: any }) {
     return () => {
       socket.off("chat message");
     };
-  }, []);
+  }, [data.username]);
 
   const sendMessage = () => {
-    const roomId = "Uid1_Uid2"; 
+    const roomId = `room_${data.username}`; 
     const payload: MessagePayload = {
       room_id: roomId,
-      from: user.username,
+      from: data.username,
       to: "receiver_username", 
       media: {
         type: "text",
@@ -51,14 +48,20 @@ export default function ChatComponent({ data }: { data: any }) {
       isSender: true, 
     };
     socket.emit("chat message", payload);
-    setNewMessage("");
-    setMessages((prevMessages) => [...prevMessages, payload]);
+    setNewMessage(""); 
   };
 
   return (
     <div className="flex justify-center items-start h-screen bg-gray-100">
       <main className="flex flex-col justify-between h-full max-w-md w-full p-4 border border-gray-300 bg-white shadow-md rounded-lg space-y-4">
-        <MessageHeader user={user} />
+        <div className="flex items-center justify-between w-full">
+          <button onClick={onBack} className="text-blue-500">
+            <AiOutlineArrowLeft className="text-2xl" />
+          </button>
+          <span className="font-bold">{data.username}</span>
+          <AiOutlineMore className="text-2xl" />
+        </div>
+        <MessageHeader user={data} />
         <div className="flex-1 overflow-y-auto">
           <ChatMessage messages={messages} />
         </div>

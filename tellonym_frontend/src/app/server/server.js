@@ -1,11 +1,11 @@
-const express = require('express');
+const { Hono } = require('hono');
 const http = require('http');
 const { Server } = require('socket.io');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
 // Initialize the app
-const app = express();
+const app = new Hono();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
@@ -15,8 +15,11 @@ const io = new Server(server, {
 });
 
 // Middleware
-app.use(cors());
-app.use(express.json());
+app.use('*', cors());
+app.use('*', async (c, next) => {
+  c.res.headers.append('Content-Type', 'application/json');
+  await next();
+});
 
 // MongoDB connection
 const uri = 'mongodb+srv://Kanisha13:kanu13@cluster0.3hsogmn.mongodb.net/chatapplication?retryWrites=true&w=majority&appName=Cluster0'; // Replace with your actual connection string
@@ -74,16 +77,19 @@ io.on('connection', (socket) => {
 });
 
 // API endpoints
-app.get('/', (req, res) => {
-  res.send('Chat App Backend');
-});
+app.get('/', (c) => c.text('Chat App Backend'));
 
-app.get('/chatrooms/:room_id', async (req, res) => {
-  const { room_id } = req.params;
+app.get('/chatrooms/:room_id', async (c) => {
+  const { room_id } = c.req.param();
   const chatRoom = await ChatRoom.findOne({ room_id });
-  res.json(chatRoom);
+  if (chatRoom) {
+    return c.json(chatRoom);
+  } else {
+    return c.json({ error: 'Chat room not found' }, 404);
+  }
 });
 
+// Start the server
 server.listen(3001, () => {
   console.log('WebSocket server listening on port 3001');
 });

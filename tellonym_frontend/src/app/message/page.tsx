@@ -10,6 +10,7 @@ export default function Protected() {
   return (
     <div className="bg-slate-50">
       <div className="p-4">
+    
         <ChatComponent data={user} />
       </div>
     </div>

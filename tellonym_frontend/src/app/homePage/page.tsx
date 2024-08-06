@@ -4,6 +4,7 @@ import Navigation from '../../reuseable_component/navigation';
 import { ScrollArea } from '../../components/ui/scroll-area';
 import TellsList from '../../reuseable_component/tells';
 import Recommendations from '../../reuseable_component/Recommendations';
+import { cookies } from 'next/headers'
 
 // Dummy data for recommendations
 const dummyRecommendations = [
@@ -11,6 +12,34 @@ const dummyRecommendations = [
   { imageUrl: 'https://example.com/image2.jpg', name: 'User 2' },
   { imageUrl: 'https://example.com/image3.jpg', name: 'User 3' },
 ];
+
+<body onLoad={getTells}></body>
+
+async function getTells(){
+  try {
+      const response = await fetch('http://localhost:8080/tells', {
+          method: 'POST',
+          headers: {
+              'Authorization': 'application/json',
+          },
+          credentials: 'include',
+      });
+
+      if (response.ok) {
+          const data = await response.json();
+          const { token } = data;
+          console.log(token)
+
+          // Store token in localStorage
+          // localStorage.setItem('accessToken', token);
+      } else {
+          console.error('Login failed');
+      }
+  } catch (error) {
+      console.error('Login error:', error);
+  }
+  
+};
 
 const MainLayout = () => {
   return (

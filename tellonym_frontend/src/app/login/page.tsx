@@ -16,7 +16,7 @@ const LoginPage: React.FC = () => {
     };
 
     const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setPassword(e.target.value);
+        setPassword(e.target.value); 
     };
 
     const handleLogin = async () => {
@@ -31,19 +31,19 @@ const LoginPage: React.FC = () => {
 
             if (response.ok) {
                 const data = await response.json();
-                const { accessToken } = data;
+                const { token } = data;
+                console.log(token)
 
                 // Store token in localStorage
-                localStorage.setItem('accessToken', accessToken);
+                // localStorage.setItem('accessToken', token);
+                router.push('/homePage');
             } else {
                 console.error('Login failed');
             }
         } catch (error) {
             console.error('Login error:', error);
         }
-
-        // Always redirect to /homePage
-        router.push('/homePage');
+        
     };
 
     return (
@@ -55,8 +55,8 @@ const LoginPage: React.FC = () => {
                         Email
                     </Label>
                     <Input
-                        type="text"
-                        id="email"
+                        type="email"
+                        id="email"  
                         placeholder="Email"
                         className="border border-gray-300 rounded-md px-3 py-2"
                         value={email}

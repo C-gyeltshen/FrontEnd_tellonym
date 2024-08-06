@@ -16,13 +16,25 @@ const tellsData = [
     message: "Do you think you can fix a broken person?",
     replies: ["I don't know But I can try at least"],
   },
-  { message: "What's your type??", replies: ["Meaning Like what type type ?"] },
+  { 
+    message: "What's your type??",
+    replies: ["Meaning Like what type type ?"] },
   {
     message: "How do you handle stress?",
     replies: ["I usually take a walk or listen to music."],
   },
-  { message: "Favorite hobby?", replies: ["I love painting and reading books."] },
-  { message: "Best advice you've received?", replies: ["Always stay true to yourself."] },
+  { 
+    message: "Favorite hobby?", 
+    replies: ["I love painting and reading books."] 
+  },
+  { 
+    message: "Best advice you've received?", 
+    replies: ["Always stay true to yourself."] 
+  },
+  { 
+    message: "are you married ", 
+    replies: ["nop!"] 
+  },
 ];
 
 interface TellsProps {

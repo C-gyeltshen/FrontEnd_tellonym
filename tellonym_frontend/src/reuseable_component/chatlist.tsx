@@ -1,6 +1,9 @@
 import React from 'react';
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 import { ScrollArea } from "@/components/ui/scroll-area"
 import {
   Card,

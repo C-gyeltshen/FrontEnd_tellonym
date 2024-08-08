@@ -7,6 +7,9 @@ import { VscCheckAll } from "react-icons/vsc"; // Seen icon
 import { Message } from "@/types/types"; // Update the import path
 import { ScrollArea } from "@/components/ui/scroll-area"
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 interface ChatMessageProps {
@@ -20,6 +23,9 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ messages }) => {
 =======
     <div className="flex flex-col space-y-4">
       <ScrollArea>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       {messages.map((message, index) => (
         <div

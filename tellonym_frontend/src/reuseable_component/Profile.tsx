@@ -24,7 +24,7 @@ const ProfileCard = () => {
         </Avatar> 
         <div> 
           <CardTitle className="text-lg font-bold">UserName</CardTitle> 
-          <CardDescription className="text-sm text-gray-500">Kamal.8261461</CardDescription> 
+          <CardDescription className="text-sm text-gray-500">haha.8261461</CardDescription> 
         </div> 
       </CardHeader> 
       <CardContent className="flex-1 relative overflow-y-auto p-4"> 

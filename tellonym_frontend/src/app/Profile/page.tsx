@@ -12,7 +12,7 @@ const MainLayout = () => {
         <Header /> 
         <OwnProfileCard /> 
         <div className="w-full flex justify-center p-4 mt-4 overflow-y-auto flex-grow"> 
-          <TellsList /> 
+          {/* <TellsList />  */}
         </div> 
         <div className="w-full flex justify-center p-4 bg-white border-t border-gray-300 absolute bottom-0 left-0 right-0"> 
           <Navigation /> 

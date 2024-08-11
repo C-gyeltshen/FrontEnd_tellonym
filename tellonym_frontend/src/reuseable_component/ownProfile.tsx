@@ -1,5 +1,6 @@
 'use client'
 import React, { useEffect, useState } from "react";
+
 import {
   CardContent,
   CardHeader,
@@ -10,29 +11,30 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
+import { ScrollArea } from "@radix-ui/react-scroll-area";
 
 function ProfileCard() {
   const router = useRouter();
   const [name, setName] = useState('');
   
-  useEffect(() => {
-    // Fetch the user profile information
-    axios.get('http://localhost:8080/profile', { withCredentials: true })
-      .then(res => {
-        if (res.data.valid) {
-          setName(res.data.username);
-        } else {
-          router.push('/login');
-        }
-      })
-      .catch(() => {
-        router.push('/login');
-      });
-  }, [router]);
+  // useEffect(() => {
+  //   // Fetch the user profile information
+  //   axios.get('http://localhost:8080/profile', { withCredentials: true })
+  //     .then(res => {
+  //       if (res.data.valid) {
+  //         setName(res.data.username);
+  //       } else {
+  //         router.push('/login');
+  //       }
+  //     })
+  //     .catch(() => {
+  //       router.push('/login');
+  //     });
+  // }, [router]);
 
   return (
     <div className="w-full flex flex-col">
-      <ScrollArea className="max-h-96 overflow-y-auto">
+      {/* <ScrollArea className="max-h-96 overflow-y-auto"> */}
 
       <CardHeader className="flex items-center space-x-4 p-4">
         {/* <Avatar>
@@ -86,18 +88,15 @@ function ProfileCard() {
             </Button>
           </div>
           <div className="mt-4">
-<<<<<<< HEAD
             {/* <ScrollArea className="max-h-96 overflow-y-auto">
               <TellsList />
             </ScrollArea> */}
-=======
-              <TellsList />
+             
             
->>>>>>> 7355611 (edit ownProfile)
           </div>
         </div>
       </CardContent>
-      </ScrollArea>
+      {/* <ScrollArea/> */}
     </div>
   );
 }

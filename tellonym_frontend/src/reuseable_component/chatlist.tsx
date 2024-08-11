@@ -1,9 +1,4 @@
 import React from 'react';
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
 import { ScrollArea } from "@/components/ui/scroll-area"
 import {
   Card,
@@ -13,7 +8,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
->>>>>>> Stashed changes
 
 interface ChatListProps {
   avatarSrc: string;
@@ -25,13 +19,11 @@ interface ChatListProps {
 
 const ChatList: React.FC<ChatListProps> = ({ avatarSrc, username, message, timestamp, onClick }) => {
   return (
-<<<<<<< Updated upstream
     <div onClick={onClick} className="flex items-center space-x-4 p-4 hover:bg-gray-200 cursor-pointer">
       <img src={avatarSrc} alt={username} className="w-12 h-12 rounded-full" />
       <div className="flex flex-col">
         <span className="font-bold">{username}</span>
         <span className="text-gray-600">{message}</span>
-=======
     <div className='flex justify-between border border-gray-100 rounded-lg p-3 mb-2'>
       <div className='flex items-center'>
         <ScrollArea>
@@ -52,9 +44,10 @@ const ChatList: React.FC<ChatListProps> = ({ avatarSrc, username, message, times
         <div className='text-gray-400 text-xs'>
           {timestamp}
         </div>
->>>>>>> Stashed changes
       </div>
       <span className="text-gray-400 text-sm">{timestamp}</span>
+    </div>
+    </div>
     </div>
   );
 };

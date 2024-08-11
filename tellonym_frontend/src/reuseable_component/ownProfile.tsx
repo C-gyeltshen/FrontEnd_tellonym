@@ -32,6 +32,8 @@ function ProfileCard() {
 
   return (
     <div className="w-full flex flex-col">
+      <ScrollArea className="max-h-96 overflow-y-auto">
+
       <CardHeader className="flex items-center space-x-4 p-4">
         {/* <Avatar>
           <AvatarImage src="/images/photo_6293953704327495957_y.jpg" />
@@ -84,12 +86,18 @@ function ProfileCard() {
             </Button>
           </div>
           <div className="mt-4">
+<<<<<<< HEAD
             {/* <ScrollArea className="max-h-96 overflow-y-auto">
               <TellsList />
             </ScrollArea> */}
+=======
+              <TellsList />
+            
+>>>>>>> 7355611 (edit ownProfile)
           </div>
         </div>
       </CardContent>
+      </ScrollArea>
     </div>
   );
 }

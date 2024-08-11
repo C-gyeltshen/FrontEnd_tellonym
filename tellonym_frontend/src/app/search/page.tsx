@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client";
 import React, { useState } from 'react';
 
@@ -54,10 +55,38 @@ const Search = () => {
               <p key={user.user_id}>{user.user_name}</p>
             </ul>
           )}
+=======
+'use client'
+
+import { IoIosArrowBack } from "react-icons/io";
+import React from 'react';
+import ProfileCard from '../../reuseable_component/Profile';
+import Header from '../../reuseable_component/homepageheader';
+import Navigation from '../../reuseable_component/navigation'; // Adjust the path as per your project structure
+import { Input } from "@/components/ui/input"
+import { CiSearch } from "react-icons/ci";
+
+
+const App = () => {
+  return (
+    <div className="flex justify-center items-start h-screen bg-gray-100">
+      <main className="flex flex-col items-center justify-start h-full max-w-md w-full p-4 border border-gray-300 bg-white shadow-md rounded-lg overflow-auto relative">
+      <div className="flex items-start p-4 items-center ">
+        <IoIosArrowBack className="text-2xl cursor-pointer" />
+          <input className="ml-2 flex-grow border border-gray-600"/>
+          <CiSearch className=""/>
+      </div>
+        <div className="w-full flex justify-center p-4">
+          <Navigation />
+>>>>>>> 7355611 (edit ownProfile)
         </div>
       </main>
     </div>
   );
 };
 
+<<<<<<< HEAD
 export default Search;
+=======
+export default App;
+>>>>>>> 7355611 (edit ownProfile)

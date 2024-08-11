@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import InboxHeader from '../../reuseable_component/InboxHeader';
 import Navigation from '../../reuseable_component/navigation';
 import { ScrollArea } from '../../components/ui/scroll-area';
-import Tells from './Tells';
+import Tells from '../../reuseable_component/Tells';
 
 const MainLayout: React.FC = () => {
   const [tellsData, setTellsData] = useState<{ id: number; message: string; timestamp: string }[]>([]);

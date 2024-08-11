@@ -1,9 +1,9 @@
 import React from 'react'; 
-import Header from '../../reuseable_component/homepageheader'; // Adjust the import path as needed 
-import Navigation from '../../reuseable_component/navigation'; // Adjust the import path as needed 
-import OwnProfileCard from '../../reuseable_component/ownProfile'; // Adjust the import path as needed 
-import TellsList from '../../reuseable_component/tells'; // Adjust the import path as needed 
-import { ScrollArea } from '../../components/ui/scroll-area'; // Adjust the import path as needed
+import Header from '../../reuseable_component/homepageheader'; 
+import Navigation from '../../reuseable_component/navigation'; 
+import OwnProfileCard from '../../reuseable_component/ownProfile'; 
+import TellsList from '../../reuseable_component/tells'; 
+import { ScrollArea } from '../../components/ui/scroll-area'; 
 
 const MainLayout = () => { 
   return ( 

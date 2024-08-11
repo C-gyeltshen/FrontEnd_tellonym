@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import { useRouter } from 'next/navigation';
-import { Button } from '../../components/ui/button';
+import { Button } from '../components/ui/button';
 
 const Tells: React.FC<{ id: number; message: string; timestamp: string }> = ({ id, message, timestamp }) => {
   const router = useRouter();

@@ -18,11 +18,11 @@ const dummyRecommendations = [
 async function getTells(){
   try {
       const response = await fetch('http://localhost:8080/tells', {
-          method: 'POST',
+          method: 'GET',
           headers: {
               'Authorization': 'application/json',
           },
-          credentials: 'include',
+          body: JSON.stringify({  }),
       });
 
       if (response.ok) {

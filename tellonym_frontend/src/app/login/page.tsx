@@ -30,9 +30,11 @@ const LoginPage: React.FC = () => {
             });
 
             if (response.ok) {
+                console.log("its working")
                 const data = await response.json();
-                const { token } = data;
-                console.log(token)
+                const { token } = data
+                console.log("the token is",token)
+
 
                 // Store token in localStorage
                 // localStorage.setItem('accessToken', token);

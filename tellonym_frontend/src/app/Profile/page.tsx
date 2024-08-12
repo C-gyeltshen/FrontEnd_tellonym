@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../../reuseable_component/homepageheader'; 
 import Navigation from '../../reuseable_component/navigation'; 
 import OwnProfileCard from '../../reuseable_component/ownProfile'; 
-import TellsList from '../../reuseable_component/tells'; 
+import TellsList from '../../reuseable_component/tellsData'; 
 import { ScrollArea } from '../../components/ui/scroll-area'; 
 
 const MainLayout = () => { 

@@ -35,9 +35,6 @@ const LoginPage: React.FC = () => {
                 const { token } = data
                 console.log("the token is",token)
 
-
-                // Store token in localStorage
-                // localStorage.setItem('accessToken', token);
                 router.push('/home');
             } else {
                 console.error('Login failed');

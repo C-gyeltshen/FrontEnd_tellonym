@@ -1,5 +1,7 @@
 import React from 'react';
-import { Message } from '@/types/types';
+import { VscCheckAll } from "react-icons/vsc"; // Seen icon
+import { Message } from "@/types/types"; // Update the import path
+import { ScrollArea } from "@/components/ui/scroll-area"
 
 interface ChatMessageProps {
   messages: Message[];
@@ -8,6 +10,8 @@ interface ChatMessageProps {
 const ChatMessage: React.FC<ChatMessageProps> = ({ messages }) => {
   return (
     <div className="p-4 space-y-4">
+    <div className="flex flex-col space-y-4">
+      <ScrollArea>
       {messages.map((message, index) => (
         <div
           key={index}
@@ -23,6 +27,8 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ messages }) => {
           </div>
         </div>
       ))}
+      </ScrollArea>
+    </div>
     </div>
   );
 };

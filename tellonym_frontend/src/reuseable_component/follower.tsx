@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button"
 
 const ChatList = () => {
   return (
+    
     <div className='flex justify-between border border-gray-100 rounded-lg p-3'>
       <div className='flex items-center'>
         <Card className='profile-card w-19 h-16'>

@@ -12,7 +12,7 @@ const Navigation = () => {
 
   return (
     <div className="flex space-x-16 items-stretch">
-      <div className="text-xl cursor-pointer" onClick={() => router.push('/homePage')}>
+      <div className="text-xl cursor-pointer" onClick={() => router.push('/home')}>
         <GoHome />
       </div>
       <div className="text-xl cursor-pointer" onClick={() => router.push('/inbox')}>

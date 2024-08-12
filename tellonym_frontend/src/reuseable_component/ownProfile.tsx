@@ -1,5 +1,6 @@
 'use client'
-import React from "react";
+import React, { useEffect, useState } from "react";
+
 import {
   CardContent,
   CardHeader,
@@ -8,22 +9,39 @@ import {
 } from "@/components/ui/card";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { VscSend } from "react-icons/vsc";
-import TellsList from "../reuseable_component/tells"; // Assuming TellsList renders multiple Tells components
-import { ScrollArea } from "../components/ui/scroll-area";
 import { useRouter } from 'next/navigation';
+import axios from 'axios';
+import { ScrollArea } from "@radix-ui/react-scroll-area";
 
-const ProfileCard = () => {
+function ProfileCard() {
   const router = useRouter();
+  const [name, setName] = useState('');
+  
+  // useEffect(() => {
+  //   // Fetch the user profile information
+  //   axios.get('http://localhost:8080/profile', { withCredentials: true })
+  //     .then(res => {
+  //       if (res.data.valid) {
+  //         setName(res.data.username);
+  //       } else {
+  //         router.push('/login');
+  //       }
+  //     })
+  //     .catch(() => {
+  //       router.push('/login');
+  //     });
+  // }, [router]);
 
   return (
     <div className="w-full flex flex-col">
+      {/* <ScrollArea className="max-h-96 overflow-y-auto"> */}
+
       <CardHeader className="flex items-center space-x-4 p-4">
-        <Avatar>
+        {/* <Avatar>
           <AvatarImage src="/images/photo_6293953704327495957_y.jpg" />
-        </Avatar>
+        </Avatar> */}
         <div>
-          <CardTitle className="text-lg font-bold">UserName</CardTitle>
+          <CardTitle className="text-lg font-bold">Username: {name}</CardTitle>
           <CardDescription className="text-sm text-gray-500">@namgyel.8261461</CardDescription>
         </div>
       </CardHeader>
@@ -70,14 +88,17 @@ const ProfileCard = () => {
             </Button>
           </div>
           <div className="mt-4">
-            <ScrollArea className="max-h-96 overflow-y-auto">
+            {/* <ScrollArea className="max-h-96 overflow-y-auto">
               <TellsList />
-            </ScrollArea>
+            </ScrollArea> */}
+             
+            
           </div>
         </div>
       </CardContent>
+      {/* <ScrollArea/> */}
     </div>
   );
-};
+}
 
 export default ProfileCard;

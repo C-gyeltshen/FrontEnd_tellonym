@@ -1,14 +1,22 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+
+import React, { useState, useEffect, FormEvent } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import TellsReplyHeader from '@/reuseable_component/TellsReplyHeader';
 
+interface ReplyResponse {
+  id: number;
+  reply: string;
+  status: number;
+  // Add any other fields your backend returns
+}
+
 const TellonymPage: React.FC = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [replyMessage, setReplyMessage] = useState('');
+  const [replyMessage, setReplyMessage] = useState<string>('');
   const tellId = searchParams.get('tellId');
   const message = searchParams.get('message');
 
@@ -19,9 +27,11 @@ const TellonymPage: React.FC = () => {
     }
   }, [tellId, message, router]);
 
-  const handleSend = async () => {
+  const handleSend = async (e: FormEvent) => {
+    e.preventDefault();
+    
     try {
-      const response = await fetch(`/tells/${tellId}/reply`, {
+      const response = await fetch(`http://localhost:8080/tells/${tellId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -29,13 +39,15 @@ const TellonymPage: React.FC = () => {
         body: JSON.stringify({ reply: replyMessage }),
       });
 
-      const result = await response.json();
-      if (response.ok) {
-        alert('Tell replied successfully');
-        router.push('/inbox');
-      } else {
-        alert('Error: ' + result.error);
+      if (!response.ok) {
+        const errorData = await response.json();
+        alert('Error: ' + errorData.error);
+        return;
       }
+
+      const result: ReplyResponse = await response.json();
+      alert('Tell replied successfully');
+      router.push('/inbox');
     } catch (error) {
       console.error('Error sending reply:', error);
       alert('An error occurred while sending the reply');

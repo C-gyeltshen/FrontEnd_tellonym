@@ -67,7 +67,7 @@ const TellsList: React.FC = () => {
   const [tellsData, setTellsData] = useState<TellsProps[]>([]);
 
   useEffect(() => {
-    fetch("http:// localhost:8080/tells/replied")
+    fetch("http://localhost:8080/tells/replied")
       .then((response) => response.json())
       .then((data) => {
         setTellsData(data);

@@ -1,4 +1,6 @@
-import React from 'react';
+"use client"; 
+
+import React, { useState } from 'react';
 import {
   Card,
   CardContent,
@@ -6,12 +8,17 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const ChatList = () => {
+  const [isFollowing, setIsFollowing] = useState(false);
+
+  const handleFollowClick = () => {
+    setIsFollowing(!isFollowing);
+  };
+
   return (
-    
     <div className='flex justify-between border border-gray-100 rounded-lg p-3'>
       <div className='flex items-center'>
         <Card className='profile-card w-19 h-16'>
@@ -19,15 +26,14 @@ const ChatList = () => {
         </Card>
         <div className='px-2 ml-2'>
           <div>
-            username {/* Replace with actual username */}
+            username {}
           </div>
-          
         </div>
       </div>
       <div className='flex items-center'>
+        <Button onClick={handleFollowClick}>
 
-          <Button>
-          Follow {/* Replace with actual label */}
+          {isFollowing ? 'Unfollow' : 'Follow'}
         </Button>
       </div>
     </div>
@@ -35,3 +41,5 @@ const ChatList = () => {
 };
 
 export default ChatList;
+
+

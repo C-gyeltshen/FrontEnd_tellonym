@@ -18,10 +18,8 @@ const HomePage = () => {
           <Follower /> {}
           <Follower /> {}
           <Follower /> {}
-          <Follower /> {}
-          <Follower /> {}
-          <Follower /> {}
-       
+        
+    
         </ScrollArea>
         <div className="w-full flex justify-center p-4">
           <Navigation />
@@ -32,3 +30,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
